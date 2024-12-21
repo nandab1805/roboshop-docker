@@ -1,4 +1,4 @@
-# version: "3.8"
+version: "3.8"
 
 networks:
   default:
@@ -8,8 +8,8 @@ networks:
 services:
   mongodb:
     image: mongodb:v1
-    # ports:
-    #   - "27017:27017"
+    ports:
+      - "27017:27017"
     networks:
       - default
 
