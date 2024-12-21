@@ -1,24 +1,18 @@
-version: "3.8"
-
 networks:
   default:
-    external:
-      name: roboshop
+    name: roboshop
+    external: true
 
 services:
   mongodb:
     image: mongodb:v1
     ports:
       - "27017:27017"
-    networks:
-      - default
 
   catalogue:
     image: catalogue:v1
     depends_on:
       - mongodb
-    networks:
-      - default
 
   web:
     image: web:v1
@@ -26,5 +20,3 @@ services:
       - "80:80"
     depends_on:
       - catalogue
-    networks:
-      - default
