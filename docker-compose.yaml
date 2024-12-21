@@ -5,17 +5,17 @@ networks:
 
 services:
   mongodb:
-    image: mongodb:v1
+    image: mongodb:1
     ports:
       - "27017:27017"
 
   catalogue:
-    image: catalogue:v1
+    image: catalogue:1
     depends_on:
       - mongodb
 
   web:
-    image: web:v1
+    image: web:1
     ports:
       - "80:80"
     depends_on:
